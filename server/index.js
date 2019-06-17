@@ -3,7 +3,9 @@ const app = express();
 const port = 4000;
 const router = require('./router.js');
 const cors = require('cors');
-
+app.use((req,res, next)=>{ console.log(req.path);
+next();
+})
 app.use(cors());
 app.use(express.json());
 app.use(router);
